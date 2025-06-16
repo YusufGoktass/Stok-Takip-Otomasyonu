@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StokTakipModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TC" Type="char" MaxLength="11" />
+    <Property Name="Ad" Type="varchar" MaxLength="50" />
+    <Property Name="Soyad" Type="varchar" MaxLength="50" />
+    <Property Name="DogumYili" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefon" Type="char" MaxLength="12" />
+    <Property Name="KullaniciAdi" Type="varchar" MaxLength="500" />
+    <Property Name="Sifre" Type="varchar" MaxLength="500" />
+    <Property Name="YetkiTürü" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Satis">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tc" Type="char" MaxLength="11" />
+    <Property Name="AdSoyad" Type="nvarchar" MaxLength="100" />
+    <Property Name="telefon" Type="char" MaxLength="13" />
+    <Property Name="BarkodNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="UrunAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="miktari" Type="int" />
+    <Property Name="SatisFiyati" Type="nvarchar" MaxLength="50" />
+    <Property Name="ToplamFiyat" Type="nvarchar" MaxLength="50" />
+    <Property Name="tarih" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Urun">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BarkodNo" Type="varchar" MaxLength="80" />
+    <Property Name="UrunAdi" Type="varchar" MaxLength="50" />
+    <Property Name="Marka" Type="varchar" MaxLength="50" />
+    <Property Name="Kategori" Type="varchar" MaxLength="50" />
+    <Property Name="Stok" Type="varchar" MaxLength="500" />
+    <Property Name="SatisFiyati" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityContainer Name="StokTakipModelStoreContainer">
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Satis" EntityType="Self.Satis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Urun" EntityType="Self.Urun" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
